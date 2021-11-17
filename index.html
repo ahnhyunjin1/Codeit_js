@@ -18,36 +18,38 @@
   </div>
 
   <img id="photo" src="images/home.png" width="90%">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     //사진 바꿔주는 함수
     function clickHome() {
-      document.getElementById('photo').src = './images/home.png';
-      document.getElementById('home').style.fontWeight = 'bold';
-      document.getElementById('seoul').style.fontWeight = 'normal';
-      document.getElementById('tokyo').style.fontWeight = 'normal';
-      document.getElementById('paris').style.fontWeight = 'normal';
-    }
-    function clickSeoul() {
-      document.getElementById('photo').src = './images/seoul.png';
-      document.getElementById('seoul').style.fontWeight = 'bold';
-      document.getElementById('home').style.fontWeight = 'normal';
-      document.getElementById('tokyo').style.fontWeight = 'normal';
-      document.getElementById('paris').style.fontWeight = 'normal';
-    }
-    function clickTokyo() {
-      document.getElementById('photo').src = './images/tokyo.png';
-      document.getElementById('tokyo').style.fontWeight = 'bold';
-      document.getElementById('home').style.fontWeight = 'normal';
-      document.getElementById('seoul').style.fontWeight = 'normal';
-      document.getElementById('paris').style.fontWeight = 'normal';
+      $('#photo').attr('src', './images/home.png')
+      $('#home').css('font-weight', 'bold')
+      $('#seoul').css('font-weight', 'normal')
+      $('#tokyo').css('font-weight', 'normal')
+      $('#paris').css('font-weight', 'normal')
 
     }
+    function clickSeoul() {
+      $('#photo').attr('src', './images/seoul.png')
+      $('#seoul').css('font-weight', 'bold')
+      $('#home').css('font-weight', 'normal')
+      $('#tokyo').css('font-weight', 'normal')
+      $('#paris').css('font-weight', 'normal')
+    }
+    function clickTokyo() {
+      $('#photo').attr('src', './images/tokyo.png')
+      $('#tokyo').css('font-weight', 'bold')
+      $('#seoul').css('font-weight', 'normal')
+      $('#home').css('font-weight', 'normal')
+      $('#paris').css('font-weight', 'normal')
+    }
     function clickParis() {
-      document.getElementById('photo').src = './images/paris.png';
-      document.getElementById('paris').style.fontWeight = 'bold';
-      document.getElementById('home').style.fontWeight = 'normal';
-      document.getElementById('tokyo').style.fontWeight = 'normal';
-      document.getElementById('tokyo').style.fontWeight = 'normal';
+      $('#photo').attr('src', './images/paris.png')
+      $('#paris').css('font-weight', 'bold')
+      $('#seoul').css('font-weight', 'normal')
+      $('#tokyo').css('font-weight', 'normal')
+      $('#home').css('font-weight', 'normal')
     }
   </script>
 </body>
