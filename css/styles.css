@@ -11,6 +11,10 @@
   margin-bottom: 60px;
 }
 
+
+#home {
+  font-weight: bold;
+}
 #menu a {
   margin-left: 10px;
   margin-right: 10px;
