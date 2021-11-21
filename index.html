@@ -83,6 +83,19 @@
         clickParis();
       }
     }
+    //키보드 이벤트 핸들링
+
+    function processKeyEvent(event) {
+      if (event['key'] === '1') {
+        clickHome();
+      } else if (event['key'] === '2') {
+        clickSeoul()
+      } else if (event['key'] === '3') {
+        clickTokyo();
+      } else if (event['key'] === '4') {
+        clickParis();
+      }
+    }
   </script>
 </body>
 
