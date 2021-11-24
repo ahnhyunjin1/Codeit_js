@@ -1,44 +1,36 @@
-$('#home').on('click', clickHome);
-$('#seoul').on('click', clickSeoul);
-$('#tokyo').on('click', clickTokyo);
-$('#paris').on('click', clickParis);
+
+$('#menu a').on('click', selectMenu);
 
 $('#photo').on('mouseenter', mouseEnterPhoto);
 $('#photo').on('mouseleave', mouseLeavePhoto);
 $(document).on('keydown', processKeyEvent);
 
-$(document).on('keydown', processKeyEvent);
 
-//사진 바꿔주는 함수
-function clickHome() {
-    $('#photo').attr('src', './images/home.png')
-    $('#home').css('font-weight', 'bold')
-    $('#seoul').css('font-weight', 'normal')
-    $('#tokyo').css('font-weight', 'normal')
-    $('#paris').css('font-weight', 'normal')
 
+function selectMenu(event) {
+    // var targetId = (event.currentTarget.id);
+
+    var targetId = '';
+    if (event.type === 'click') {
+        targetId = (event.currentTarget.id);
+    } else if (event.type === 'keydown') {
+        if (event.key === '1') {
+            targetId = 'home';
+        } else if (event.type === '2') {
+            targetId = 'seoul';
+        } else if (event.type === '3') {
+            targetId = 'tokyo';
+        } else if (event.type === '4') {
+            targetId = 'paris';
+        }
+    }
+
+    $('#photo').attr('src', 'images/' + targetId + '.png');
+    $('#menu a').css('font-weight', 'normal');
+    $('#' + targetId).css('font-weight', 'bold');
 }
-function clickSeoul() {
-    $('#photo').attr('src', './images/seoul.png')
-    $('#seoul').css('font-weight', 'bold')
-    $('#home').css('font-weight', 'normal')
-    $('#tokyo').css('font-weight', 'normal')
-    $('#paris').css('font-weight', 'normal')
-}
-function clickTokyo() {
-    $('#photo').attr('src', './images/tokyo.png')
-    $('#tokyo').css('font-weight', 'bold')
-    $('#seoul').css('font-weight', 'normal')
-    $('#home').css('font-weight', 'normal')
-    $('#paris').css('font-weight', 'normal')
-}
-function clickParis() {
-    $('#photo').attr('src', './images/paris.png')
-    $('#paris').css('font-weight', 'bold')
-    $('#seoul').css('font-weight', 'normal')
-    $('#tokyo').css('font-weight', 'normal')
-    $('#home').css('font-weight', 'normal')
-}
+
+
 
 function mouseEnterPhoto() {
     $('#photo').css('box-shadow', '5px 10px');
